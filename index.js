@@ -1,6 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown')
+
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -54,35 +56,10 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    return (
-    ` 
-    # ${data.project}
 
-    ## Description
+    fs.writeFile(fileName, data, (err) =>
+        err ? console.log(err) : console.log('Successfully created autoreadme.md!'));
 
-    ${data.description}
-
-    ## Installation
-
-    ${data.dependencies}
-
-    ## License
-
-    ${data.license}
-
-    ## Features
-
-    ${data.usage}
-
-    ## How to Contribute
-
-    ${data.contribution}
-
-    ## Tests
-
-    ${data.runCommand}
-
-`)
 }
 
 // TODO: Create a function to initialize app
@@ -91,10 +68,9 @@ function init() {
         .prompt(questions)
         .then((answers) => {
 
-            let generateReadme = writeToFile(answers, answers);
+            const readme = generateMarkdown(answers)
 
-            fs.writeFile('readme.md', generateReadme, (err) =>
-                err ? console.log(err) : console.log('Successfully created readme.md!'));
+            writeToFile('autoreadme.md', readme);
 
         })
 }
