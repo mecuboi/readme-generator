@@ -1,76 +1,76 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-
+  if (license){
+    `[![License: ${license}](https://img.shields.io/badge/License-MIT-yellow.svg)]`
+  } else {
+    ``
+  }
+  
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if (license){
+    `(https://opensource.org/licenses/${license})`
+  } else {
+    ``
+  }
+  
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  `${renderLicenseBadge(license)}${renderLicenseLink(license)}`
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  let tableOfContent = 
-  `## Table of Contents
-  `
-  if (data.dependencies){
-    tableOfContent +=
-    `* [Installation](#installation)
-    `
-  };
-
-  if (data.usage) {
-    tableOfContent +=
-    `* [Usage](#usage)`
-  }
 
   let readme = 
-    `# ${data.project}
+`# ${data.project}
 
-    ## Description
+## Description
 
-    ${data.description}
+${data.description}
 
-    ## Table of Contents
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [Run](#run)
-    - [Contributing](#contributing)
-    - [License](#license)
-    - [Questions](#Questions)
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Run](#run)
+- [Contributing](#contributing)
+- [License](#license)
+- [Questions](#Questions)
 
-    ## Installation
+## Installation
 
     ${data.dependencies}
 
-    ## Usage
+## Usage
 
-    ${data.usage}
+${data.usage}
 
-    ## Run
+## Run
 
     ${data.runCommand}
 
-    ## Contributing
+## Contributing
 
-    ${data.contribution}
+${data.contribution}
 
-    ## License
+## License
 
-    ${data.license}
+${renderLicenseSection(data.license)}
 
-    ## Questions
+## Questions
 
-    Reach out to me using the links below:
+Reach out to me using the links below:
 
-    GitHub: [${data.name}](https://github.com/${data.name})
+GitHub: [${data.username}](https://github.com/${data.username})
 
-    Email: ${data.email}
-
+Email: ${data.email}
 `;
 
 return(readme);
