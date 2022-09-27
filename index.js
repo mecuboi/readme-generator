@@ -6,60 +6,82 @@ const questions = [
     {
         type: 'input',
         name: 'username',
-        message:'What is your GitHub username?',
+        message: 'What is your GitHub username?',
     },
     {
         type: 'input',
         name: 'email',
-        message:'What is your email address?',
+        message: 'What is your email address?',
     },
     {
         type: 'input',
         name: 'project',
-        message:"What is your project's name?",
+        message: "What is your project's name?",
     },
     {
         type: 'input',
         name: 'description',
-        message:'Please write a short description of your project',
+        message: 'Please write a short description of your project',
     },
     {
         type: 'list',
         name: 'license',
-        message:'What kind of license should your project have',
+        message: 'What kind of license should your project have',
         choices: ['MIT', 'MIT2', 'MIT3']
     },
     {
         type: 'input',
         name: 'dependencies',
-        message:'What command should be run to install dependencies?',
+        message: 'What command should be run to install dependencies?',
     },
     {
         type: 'input',
         name: 'runCommand',
-        message:'What command should be run to run tests?',
+        message: 'What command should be run to run tests?',
     },
     {
         type: 'input',
         name: 'usage',
-        message:'What does the user need to know about using the repo?',
+        message: 'What does the user need to know about using the repo?',
     },
     {
         type: 'input',
         name: 'contribution',
-        message:'What does the user need to know about contributing to the repo?',
+        message: 'What does the user need to know about contributing to the repo?',
     }
-    
+
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    console.log(data.username)
-    console.log(data.usage)
-    console.log(data.runCommand)
-    console.log(data.license)
-    console.log(data.project)
+    ` 
+    # ${data.project}
 
+    ## Description
+
+    ${data.description}
+
+    ## Installation
+
+    ${data.dependencies}
+
+    ## License
+
+    ${data.license}
+
+    ## Features
+
+    ${data.usage}
+
+    ## How to Contribute
+
+    ${data.contribution}
+
+    ## Tests
+
+    ${data.runCommand}
+
+`
 }
 
 // TODO: Create a function to initialize app
@@ -67,7 +89,8 @@ function init() {
     inquirer
         .prompt(questions)
         .then((answers) => {
-            writeToFile('readme.md', answers);
+            fs.writeFile('readme.md', writeToFile('readme.md', answers), (err) =>
+                err ? console.log(err) : console.log('Successfully created readme.md!'));
 
         })
 }
