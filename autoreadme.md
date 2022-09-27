@@ -2,7 +2,7 @@
 
 ## Description
 
-asdf
+asd
 
 ## Table of Contents
 - [Installation](#installation)
@@ -26,11 +26,12 @@ asdf
 
 ## Contributing
 
-asdf
+asd
 
 ## License
 
-MIT
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+Click the icon to read the license
 
 ## Questions
 
