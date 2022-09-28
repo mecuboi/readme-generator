@@ -1,8 +1,8 @@
-# asdf
+# This is a sample readme
 
 ## Description
 
-asd
+this description is just a fake description
 
 ## Table of Contents
 - [Installation](#installation)
@@ -14,29 +14,33 @@ asd
 
 ## Installation
 
-    asdf
+Install the prerequisite package by running the command below:
+
+    npm install
 
 ## Usage
 
-asdf
+Simple, just answer questions
 
 ## Run
 
-    asdf
+To run the app, use the command below:
+
+    node index.js
 
 ## Contributing
 
-asd
+git fork or git clone should do
 
 ## License
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 Click the icon to read the license
 
 ## Questions
 
 Reach out to me using the links below:
 
-GitHub: [asdf](https://github.com/asdf)
+GitHub: [mecuboi](https://github.com/mecuboi)
 
-Email: asdf
+Email: matthewd.jusuf@gmail.com

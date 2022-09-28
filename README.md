@@ -8,7 +8,7 @@ This is a node application to help you automatically generate a high quality rea
 
 Install the prerequisite package by running the command below:
 ```
-npm install inquirer
+npm install
 ```
 
 ## Usage
