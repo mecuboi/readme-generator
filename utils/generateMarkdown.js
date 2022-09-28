@@ -68,6 +68,7 @@ ${renderLicenseTable(data.license)}
 
 ## Installation
 
+Install the prerequisite package by running the command below:
     ${data.dependencies}
 
 ## Usage
@@ -76,6 +77,7 @@ ${data.usage}
 
 ## Run
 
+To run the app, use the command below:
     ${data.runCommand}
 
 ## Contributing

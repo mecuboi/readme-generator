@@ -6,8 +6,10 @@ This is a node application to help you automatically generate a high quality rea
 
 ## Installation
 
-Install the prerequisite package by running the code below:
-        npm install inquirer
+Install the prerequisite package by running the command below:
+```
+npm install inquirer
+```
 
 ## Usage
 
@@ -16,8 +18,9 @@ Use this app by running it and answering all the questions that will be prompted
 ## Run
 
 To run the app, use the command below:
-    node index.js
-
+```
+node index.js
+```
 
 ## License
 
